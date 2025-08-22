@@ -21,7 +21,7 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
                     errors="coerce",   # si no se puede parsear → NaT
                 )
             except Exception as e:
-                print(f"⚠️ No se pudo convertir {col} a fecha: {e}")
+                print(f"No se pudo convertir {col} a fecha: {e}")
 
     # 4. Manejar decimales con coma → convertir a punto
     for col in df.columns:

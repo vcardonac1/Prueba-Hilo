@@ -64,7 +64,7 @@ def main():
     # Guardar también en tabla
     loadings.to_csv(os.path.join(OUTPUT_DIR, "pca_loadings.csv"))
 
-    print("✅ PCA ejecutado. Resultados en /analytics/outputs")
+    print("PCA ejecutado. Resultados en /analytics/outputs")
 
 if __name__ == "__main__":
     main()

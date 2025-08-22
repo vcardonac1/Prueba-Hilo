@@ -29,8 +29,7 @@ RUN pip install --upgrade pip \
 COPY . .
 
 # Creamos carpetas de salida por si no existen
-RUN mkdir -p data/raw data/processed data/model analytics/outputs report/figures
+RUN mkdir -p data/raw data/processed data/model analytics/outputs report/figures report/tables
 
 # Script por defecto (puedes sobrescribir con docker run/compose)
 CMD ["/bin/bash"]
-

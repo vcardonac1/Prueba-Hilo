@@ -19,16 +19,16 @@ def process_excels():
     for fname in files:
         fpath = os.path.join(RAW_DIR, fname)
         if not os.path.exists(fpath):
-            print(f"⚠️ Archivo no encontrado: {fpath}")
+            print(f"Archivo no encontrado: {fpath}")
             continue
 
-        print(f"\n📖 Procesando {fname} ...")
+        print(f"\nProcesando {fname} ...")
 
         # Leer todas las hojas del Excel
         sheets = pd.read_excel(fpath, sheet_name=None, dtype=str, engine="openpyxl")
 
         for sheet_name, df in sheets.items():
-            print(f"   ➝ Hoja: {sheet_name}, filas: {len(df)}")
+            print(f"   Hoja: {sheet_name}, filas: {len(df)}")
 
             df_clean = clean_dataframe(df)
 
@@ -37,11 +37,11 @@ def process_excels():
             out_path = os.path.join(PROCESSED_DIR, out_name)
 
             df_clean.to_parquet(out_path, index=False)
-            print(f"   💾 Guardado: {out_name}")
+            print(f"   Guardado: {out_name}")
 
 def main():
     process_excels()
-    print("\n✅ Ingesta completada.")
+    print("\nIngesta completada.")
 
 if __name__ == "__main__":
     main()

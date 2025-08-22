@@ -61,7 +61,7 @@ def build_star_schema(tables):
     dim_date.to_parquet(os.path.join(MODEL_DIR, "dim_date.parquet"), index=False)
     fact_sales.to_parquet(os.path.join(MODEL_DIR, "fact_sales.parquet"), index=False)
 
-    print("✅ Esquema estrella creado en /data/model")
+    print("Esquema estrella creado en /data/model")
 
 def main():
     tables = load_tables()
